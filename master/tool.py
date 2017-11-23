@@ -96,7 +96,7 @@ def handle_photo():
     最后将data.json文件存到博客的source/photos文件夹下
     '''
     src_dir, des_dir = "photos/", "min_photos/"
-    file_list = list_img_file(src_dir)
+    file_list = list_img_file(src_dir).decode('gbk').encode('utf-8')
     list_info = []
     for i in range(len(file_list)):
         filename = file_list[i]
