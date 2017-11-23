@@ -96,10 +96,10 @@ def handle_photo():
     最后将data.json文件存到博客的source/photos文件夹下
     '''
     src_dir, des_dir = "photos/", "min_photos/"
-    file_list = list_img_file(src_dir).decode('gbk').encode('utf-8')
+    file_list = list_img_file(src_dir)
     list_info = []
     for i in range(len(file_list)):
-        filename = file_list[i]
+        filename = file_list[i].decode('gbk').encode('utf-8')
         date_str, info = filename.split("_")
         info, _ = info.split(".")
         date = datetime.strptime(date_str, "%Y-%m-%d")
